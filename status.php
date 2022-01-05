@@ -13,11 +13,16 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
     $conn = mysqli_connect($host, $username, $password, $database);
 
     // Deklarasi variable keyword kode.
-    $status = $_GET["query"];
+    $status = trim($_GET["query"]);
 
     // Query ke database.
-    $query  = mysqli_query($conn, "SELECT * FROM tbl_status
-        WHERE status LIKE '%$ce%'");
+    $sql = "SELECT * FROM tbl_status";
+    if(!empty($status)){
+        $sql .= " WHERE status LIKE '%$status%'";
+    }
+
+    
+    $query  = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($query) > 0){
         // Format bentuk data untuk autocomplete.

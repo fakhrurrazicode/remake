@@ -15,10 +15,17 @@
                 echo '<script language="javascript">window.history.back();</script>';
             } else {
 
+                // var_dump($_REQUEST);
+                // // // Form Nama Nasabah/Debitur hanya boleh mengandung karakter huruf, angka, spasi, titik(.), koma(,), minus(-),kurung() dan garis miring(/)
+
                 $no_register = $_REQUEST['no_register'];
                 $tgl_surat = $_REQUEST['tgl_surat'];
                 $namadeb = substr($_REQUEST['namadeb'],0,100);
                 $nnamadeb = trim($namadeb);
+
+                // var_dump($namadeb);
+                // var_dump($nnamadeb);
+                // die();
                 $kode = substr($_REQUEST['kode'],0,30);
                 $nkode = trim($kode);
                 $ce = substr($_REQUEST['ce'],0,30);
@@ -38,8 +45,10 @@
                         echo '<script language="javascript">window.history.back();</script>';
                     } else {
 
-                        if(!preg_match("/^[0-9.-]*$/", $nnamadeb)){
+                        // if(!preg_match("/^[0-9.-]*$/", $nnamadeb)){ // kode lama
+                        if(!preg_match("/^[a-zA-Z0-9.\/ -]*$/", $nnamadeb)){
                             $_SESSION['namadeb'] = 'Form Nama Nasabah/Debitur hanya boleh mengandung karakter huruf, angka, spasi, titik(.), koma(,), minus(-),kurung() dan garis miring(/)';
+                            
                             echo '<script language="javascript">window.history.back();</script>';
                         } else {
 
@@ -55,6 +64,8 @@
 
                                     if(!preg_match("/^[a-zA-Z0-9., -]*$/", $nstatus)){
                                         $_SESSION['status'] = 'Form Status hanya boleh mengandung karakter huruf, angka, spasi, titik(.) dan koma(,) dan minus (-)';
+
+                                        
                                         echo '<script language="javascript">window.history.back();</script>';
                                     } else {
 

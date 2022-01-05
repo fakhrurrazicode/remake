@@ -82,7 +82,15 @@ $(document).ready(function(){
         serviceUrl: "namadeb.php",   // Kode php untuk prosesing data.
         dataType: "JSON",           // Tipe data JSON.
         onSelect: function (suggestion) {
-            $( "#namadeb" ).val(suggestion.kode);
+            // $( "#namadeb" ).val(suggestion.kode);
+
+            $('#pic_info').remove();
+
+            $( "#namadeb" ).val(suggestion.namadeb);
+            $('#namadeb').after(`<div id="pic_info" style="margin-left: 45px; margin-bottom: 15px;">
+                <p style="margin: 0;">PIC1: ${suggestion.pic1}</p>
+                <p style="margin: 0;">PIC2: ${suggestion.pic2}</p>
+            </div>`);
         }
     });
     
@@ -91,7 +99,7 @@ $(document).ready(function(){
         serviceUrl: "ce5.php",   // Kode php untuk prosesing data.
         dataType: "JSON",           // Tipe data JSON.
         onSelect: function (suggestion) {
-            $( "#ce" ).val(suggestion.kode);
+            $( "#ce" ).val(suggestion.value);
         }
     });
     
@@ -100,7 +108,7 @@ $(document).ready(function(){
         serviceUrl: "status.php",   // Kode php untuk prosesing data.
         dataType: "JSON",           // Tipe data JSON.
         onSelect: function (suggestion) {
-            $( "#status" ).val(suggestion.kode);
+            $( "#status" ).val(suggestion.value);
         }
     });
 

@@ -26,13 +26,17 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
         while ($data = mysqli_fetch_assoc($query)) {
             $output['suggestions'][] = [
                 'value' => $data['cin'] . " " . $data['nama'],
-                'namadeb'  => $data['nama']
+                'namadeb'  => $data['nama'],
+                'pic1'  => $data['pic1'],
+                'pic2'  => $data['pic2'],
             ];
         }
     } else {
         $output['suggestions'][] = [
             'value' => '',
-            'namadeb'  => ''
+            'namadeb'  => '',
+            'pic1'  => '',
+            'pic2'  => '',
         ];
     }
 
