@@ -14,9 +14,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
 
     // Deklarasi variable keyword kode.
     $namadeb = $_GET["query"];
+    $jenis = (isset($_GET["jenis"]) && !empty($_GET["jenis"])) ? $_GET["jenis"] : 'k1';
 
     // Query ke database.
-    $query  = mysqli_query($conn, "SELECT * FROM tbl_k1
+    $query  = mysqli_query($conn, "SELECT * FROM tbl_". $jenis ."
         WHERE nama LIKE '%$namadeb%'
         OR cin LIKE '%$namadeb%'
         OR kcu LIKE '%$namadeb%'");

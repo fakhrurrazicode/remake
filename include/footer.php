@@ -78,8 +78,24 @@ $(document).ready(function(){
     });
     
     //jquery autocomplete
-    $( "#namadeb" ).autocomplete({
-        serviceUrl: "namadeb.php",   // Kode php untuk prosesing data.
+    $( "#namadeb[data-jenis='k1']").autocomplete({
+        serviceUrl: "namadeb.php?jenis=k1",   // Kode php untuk prosesing data.
+        dataType: "JSON",           // Tipe data JSON.
+        onSelect: function (suggestion) {
+            // $( "#namadeb" ).val(suggestion.kode);
+
+            $('#pic_info').remove();
+
+            $( "#namadeb" ).val(suggestion.namadeb);
+            $('#namadeb').after(`<div id="pic_info" style="margin-left: 45px; margin-bottom: 15px;">
+                <p style="margin: 0;">PIC1: ${suggestion.pic1}</p>
+                <p style="margin: 0;">PIC2: ${suggestion.pic2}</p>
+            </div>`);
+        }
+    });
+
+    $( "#namadeb[data-jenis='k2']").autocomplete({
+        serviceUrl: "namadeb.php?jenis=k2",   // Kode php untuk prosesing data.
         dataType: "JSON",           // Tipe data JSON.
         onSelect: function (suggestion) {
             // $( "#namadeb" ).val(suggestion.kode);

@@ -267,7 +267,7 @@
                         
                         <div class="input-field col s6">
                             <i class="material-icons prefix md-prefix">people</i>
-                            <input id="namadeb" type="text" class="validate" name="namadeb" required>
+                            <input id="namadeb" data-jenis="k1" type="text" class="validate" name="namadeb" required>
                                 <?php
                                     if(isset($_SESSION['namadeb'])){
                                         $namadeb = $_SESSION['namadeb'];

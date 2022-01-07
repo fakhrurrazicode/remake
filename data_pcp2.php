@@ -60,6 +60,9 @@
                                             <li class="waves-effect waves-light">
                                                 <a href="?page=input2&act=add"><i class="material-icons md-24">add_circle</i> Input Data Pencapaian</a>
                                             </li>
+                                            <li class="waves-effect waves-light">
+                                                <a href="export-excel?jenis=input2" target="_blank"><i class="material-icons md-24">file_download</i> Export Excel</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col m5 hide-on-med-and-down">
