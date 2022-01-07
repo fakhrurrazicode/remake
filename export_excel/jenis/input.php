@@ -24,7 +24,7 @@ $htmlString = '<table>
                     </thead>
                     <tbody>';
 
-$sql = "SELECT * FROM tbl_pcp2 
+$sql = "SELECT * FROM tbl_pcp 
         WHERE 
             no_register LIKE '%$cari%' OR 
             nama LIKE '%$cari%' 
@@ -59,5 +59,5 @@ $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx'
 
 
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment; filename="'. urlencode('input2.xlsx').'"');
+header('Content-Disposition: attachment; filename="'. urlencode('input.xlsx').'"');
 $writer->save('php://output');

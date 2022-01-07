@@ -1,0 +1,17 @@
+{
+    "name": "fakhrurraziandi/remake",
+    "autoload": {
+        "psr-4": {
+            "Fakhrurraziandi\\Remake\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fakhrurrazi Andi",
+            "email": "fakhrurrazi.code@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.21"
+    }
+}
