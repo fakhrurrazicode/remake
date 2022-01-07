@@ -156,7 +156,7 @@
                             <tbody>';
 
                             //script untuk mencari data
-                            $query = mysqli_query($config, "SELECT * FROM tbl_pcp WHERE isi LIKE '%$cari%' ORDER by id_pcp DESC LIMIT 15");
+                            $query = mysqli_query($config, "SELECT * FROM tbl_pcp WHERE no_register LIKE '%$cari%' OR nama LIKE '%$cari%'  ORDER by id_pcp DESC");
                             if(mysqli_num_rows($query) > 0){
                                 $no = 1;
                                 while($row = mysqli_fetch_array($query)){
