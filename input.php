@@ -96,7 +96,8 @@ if (empty($_SESSION['admin'])) {
                                                     if ($result3 > 0) {
                                                         $_SESSION['errDup3'] = 'Kombinasi Nama Nasabah/Debitur & Jenis Solusi telah digunakan! mohon periksa kembali';
                                                         echo '<script language="javascript">window.history.back();</script>';
-                                                    } else {
+                                                    } 
+                                                    else {
 
                                                         $ekstensi = array(
                                                             'jpg',
